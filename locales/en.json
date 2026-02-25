@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Home Loan Comparison",
+    "subtitle": "Compare mortgage scenarios and make informed decisions"
+  },
+  "form": {
+    "propertyPrice": "Property Price",
+    "downPayment": "Down Payment",
+    "minimumDownPayment": "Minimum (10%)",
+    "loanDuration": "Loan Duration (Years)",
+    "interestRate": "Interest Rate (%)",
+    "interestType": "Interest Type",
+    "adminFee": "Admin Fee",
+    "apr": "APR (Optional)",
+    "calculate": "Calculate",
+    "save": "Save Scenario",
+    "clear": "Clear"
+  },
+  "interestTypes": {
+    "REDUCING": "Reducing Balance",
+    "FLAT": "Flat Rate"
+  },
+  "summary": {
+    "title": "Loan Summary",
+    "loanAmount": "Loan Amount",
+    "monthlyPayment": "Monthly Payment",
+    "totalInterest": "Total Interest",
+    "totalPayable": "Total Payable",
+    "adminFee": "Admin Fee",
+    "grandTotal": "Grand Total",
+    "interestType": "Interest Type",
+    "apr": "APR"
+  },
+  "comparison": {
+    "title": "Saved Scenarios",
+    "noScenarios": "No scenarios saved yet. Calculate and save a scenario to begin comparison.",
+    "propertyPrice": "Property Price",
+    "downPayment": "Down Payment",
+    "loanAmount": "Loan Amount",
+    "duration": "Duration",
+    "rate": "Rate",
+    "type": "Type",
+    "monthly": "Monthly",
+    "totalInterest": "Total Interest",
+    "grandTotal": "Grand Total",
+    "actions": "Actions",
+    "delete": "Delete",
+    "years": "years"
+  },
+  "amortization": {
+    "title": "Amortization Schedule",
+    "show": "Show Amortization Table",
+    "hide": "Hide Amortization Table",
+    "month": "Month",
+    "payment": "Payment",
+    "principal": "Principal",
+    "interest": "Interest",
+    "balance": "Balance",
+    "notAvailable": "Amortization table is only available for reducing balance loans."
+  },
+  "messages": {
+    "scenarioSaved": "Scenario saved successfully!",
+    "scenarioDeleted": "Scenario deleted successfully!",
+    "maxScenarios": "Maximum of 10 scenarios reached. Please delete some scenarios first.",
+    "error": "An error occurred. Please try again."
+  },
+  "language": {
+    "english": "English",
+    "arabic": "العربية"
+  }
+}

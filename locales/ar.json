@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "مقارنة القروض العقارية",
+    "subtitle": "قارن سيناريوهات الرهن العقاري واتخذ قرارات مستنيرة"
+  },
+  "form": {
+    "propertyPrice": "سعر العقار",
+    "downPayment": "الدفعة الأولى",
+    "minimumDownPayment": "الحد الأدنى (10%)",
+    "loanDuration": "مدة القرض (بالسنوات)",
+    "interestRate": "معدل الفائدة (%)",
+    "interestType": "نوع الفائدة",
+    "adminFee": "الرسوم الإدارية",
+    "apr": "معدل النسبة السنوية (اختياري)",
+    "calculate": "احسب",
+    "save": "حفظ السيناريو",
+    "clear": "مسح"
+  },
+  "interestTypes": {
+    "REDUCING": "رصيد متناقص",
+    "FLAT": "معدل ثابت"
+  },
+  "summary": {
+    "title": "ملخص القرض",
+    "loanAmount": "مبلغ القرض",
+    "monthlyPayment": "الدفعة الشهرية",
+    "totalInterest": "إجمالي الفائدة",
+    "totalPayable": "إجمالي المبلغ المستحق",
+    "adminFee": "الرسوم الإدارية",
+    "grandTotal": "المجموع الكلي",
+    "interestType": "نوع الفائدة",
+    "apr": "معدل النسبة السنوية"
+  },
+  "comparison": {
+    "title": "السيناريوهات المحفوظة",
+    "noScenarios": "لا توجد سيناريوهات محفوظة بعد. احسب واحفظ سيناريو لبدء المقارنة.",
+    "propertyPrice": "سعر العقار",
+    "downPayment": "الدفعة الأولى",
+    "loanAmount": "مبلغ القرض",
+    "duration": "المدة",
+    "rate": "المعدل",
+    "type": "النوع",
+    "monthly": "شهري",
+    "totalInterest": "إجمالي الفائدة",
+    "grandTotal": "المجموع الكلي",
+    "actions": "الإجراءات",
+    "delete": "حذف",
+    "years": "سنوات"
+  },
+  "amortization": {
+    "title": "جدول الإطفاء",
+    "show": "عرض جدول الإطفاء",
+    "hide": "إخفاء جدول الإطفاء",
+    "month": "الشهر",
+    "payment": "الدفعة",
+    "principal": "الأصل",
+    "interest": "الفائدة",
+    "balance": "الرصيد",
+    "notAvailable": "جدول الإطفاء متاح فقط للقروض ذات الرصيد المتناقص."
+  },
+  "messages": {
+    "scenarioSaved": "تم حفظ السيناريو بنجاح!",
+    "scenarioDeleted": "تم حذف السيناريو بنجاح!",
+    "maxScenarios": "تم الوصول إلى الحد الأقصى من 10 سيناريوهات. يرجى حذف بعض السيناريوهات أولاً.",
+    "error": "حدث خطأ. يرجى المحاولة مرة أخرى."
+  },
+  "language": {
+    "english": "English",
+    "arabic": "العربية"
+  }
+}
