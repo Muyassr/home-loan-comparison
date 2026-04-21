@@ -11,7 +11,10 @@ export default function Home() {
   const { t, language, setLanguage } = useLanguage();
   const [result, setResult] = useState<any>(null);
   const [scenarios, setScenarios] = useState<any[]>([]);
-  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [message, setMessage] = useState<{
+    type: 'success' | 'error';
+    text: string;
+  } | null>(null);
 
   // Fetch scenarios on mount
   useEffect(() => {
@@ -87,8 +90,12 @@ export default function Home() {
       <div className="max-w-7xl mx-auto mb-6 sm:mb-8">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-4">
           <div className="text-center sm:text-start">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">{t.app.title}</h1>
-            <p className="text-sm sm:text-base text-gray-600 mt-1 sm:mt-2">{t.app.subtitle}</p>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
+              {t.app.title}
+            </h1>
+            <p className="text-sm sm:text-base text-gray-600 mt-1 sm:mt-2">
+              {t.app.subtitle}
+            </p>
           </div>
           <div className="flex gap-2 justify-center sm:justify-end flex-shrink-0">
             <button

@@ -40,6 +40,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 ## Deploy to Railway
 
 1. **Push to GitHub**
+
    ```bash
    git init
    git add .

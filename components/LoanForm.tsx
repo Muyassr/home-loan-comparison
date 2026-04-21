@@ -36,7 +36,7 @@ export default function LoanForm({ onCalculate, onSave }: LoanFormProps) {
 
   // Auto-calculate down payment as 10% of property price
   const handlePropertyPriceChange = (value: string) => {
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
       propertyPrice: value,
       downPayment: value ? String(Number(value) * 0.1) : '',
@@ -56,14 +56,16 @@ export default function LoanForm({ onCalculate, onSave }: LoanFormProps) {
     return value.replace(/,/g, '');
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     if (name === 'propertyPrice') {
       const cleanValue = parseNumber(value);
       handlePropertyPriceChange(cleanValue);
     } else {
       const cleanValue = parseNumber(value);
-      setFormData((prev) => ({ ...prev, [name]: cleanValue }));
+      setFormData(prev => ({ ...prev, [name]: cleanValue }));
     }
   };
 
@@ -140,7 +142,8 @@ export default function LoanForm({ onCalculate, onSave }: LoanFormProps) {
           />
           {formData.propertyPrice && (
             <p className="mt-1 text-sm text-gray-500">
-              {t.form.minimumDownPayment}: {formatNumber(String(Number(formData.propertyPrice) * 0.1))}
+              {t.form.minimumDownPayment}:{' '}
+              {formatNumber(String(Number(formData.propertyPrice) * 0.1))}
             </p>
           )}
         </div>
@@ -176,7 +179,9 @@ export default function LoanForm({ onCalculate, onSave }: LoanFormProps) {
         <div>
           <Listbox
             value={formData.interestType}
-            onChange={(value) => setFormData((prev) => ({ ...prev, interestType: value }))}
+            onChange={value =>
+              setFormData(prev => ({ ...prev, interestType: value }))
+            }
           >
             <Listbox.Label className="block text-sm font-medium text-gray-700 mb-1">
               {t.form.interestType}
@@ -184,10 +189,15 @@ export default function LoanForm({ onCalculate, onSave }: LoanFormProps) {
             <div className="relative">
               <Listbox.Button className="relative w-full cursor-pointer rounded-md bg-white py-2 ltr:pl-3 ltr:pr-10 rtl:pr-3 rtl:pl-10 ltr:text-left rtl:text-right border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 hover:border-gray-400 transition-colors">
                 <span className="block truncate">
-                  {formData.interestType === 'REDUCING' ? t.interestTypes.REDUCING : t.interestTypes.FLAT}
+                  {formData.interestType === 'REDUCING'
+                    ? t.interestTypes.REDUCING
+                    : t.interestTypes.FLAT}
                 </span>
                 <span className="pointer-events-none absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center ltr:pr-2 rtl:pl-2">
-                  <ChevronDownIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
+                  <ChevronDownIcon
+                    className="h-5 w-5 text-gray-400"
+                    aria-hidden="true"
+                  />
                 </span>
               </Listbox.Button>
               <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
@@ -201,7 +211,9 @@ export default function LoanForm({ onCalculate, onSave }: LoanFormProps) {
                 >
                   {({ selected }) => (
                     <>
-                      <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+                      <span
+                        className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}
+                      >
                         {t.interestTypes.REDUCING}
                       </span>
                       {selected ? (
@@ -222,7 +234,9 @@ export default function LoanForm({ onCalculate, onSave }: LoanFormProps) {
                 >
                   {({ selected }) => (
                     <>
-                      <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+                      <span
+                        className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}
+                      >
                         {t.interestTypes.FLAT}
                       </span>
                       {selected ? (

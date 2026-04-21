@@ -13,7 +13,9 @@ interface LanguageContextType {
   t: Translations;
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+const LanguageContext = createContext<LanguageContextType | undefined>(
+  undefined
+);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>('ar');
@@ -34,7 +36,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       <div
         dir={language === 'ar' ? 'rtl' : 'ltr'}
         className={language === 'ar' ? 'font-noto-arabic' : ''}
-        style={language === 'ar' ? { fontFamily: 'var(--font-noto-sans-arabic)' } : undefined}
+        style={
+          language === 'ar'
+            ? { fontFamily: 'var(--font-noto-sans-arabic)' }
+            : undefined
+        }
       >
         {children}
       </div>

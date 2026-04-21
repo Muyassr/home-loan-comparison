@@ -21,9 +21,19 @@ interface ComparisonTableProps {
   onDelete: (id: string) => void;
 }
 
-type SortableKey = 'propertyPrice' | 'monthlyPayment' | 'grandTotal' | 'totalInterest' | 'interestRate' | 'loanAmount' | 'durationYears';
+type SortableKey =
+  | 'propertyPrice'
+  | 'monthlyPayment'
+  | 'grandTotal'
+  | 'totalInterest'
+  | 'interestRate'
+  | 'loanAmount'
+  | 'durationYears';
 
-export default function ComparisonTable({ scenarios, onDelete }: ComparisonTableProps) {
+export default function ComparisonTable({
+  scenarios,
+  onDelete,
+}: ComparisonTableProps) {
   const { t } = useLanguage();
   const [sortConfig, setSortConfig] = useState<{
     key: SortableKey;
@@ -55,15 +65,20 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
   }, [scenarios, sortConfig]);
 
   const handleSort = (key: SortableKey) => {
-    setSortConfig((current) => ({
+    setSortConfig(current => ({
       key,
-      direction: current.key === key && current.direction === 'asc' ? 'desc' : 'asc',
+      direction:
+        current.key === key && current.direction === 'asc' ? 'desc' : 'asc',
     }));
   };
 
   const getSortIcon = (columnKey: SortableKey) => {
     if (sortConfig.key !== columnKey) {
-      return <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">↕</span>;
+      return (
+        <span className="text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">
+          ↕
+        </span>
+      );
     }
     return sortConfig.direction === 'asc' ? '↑' : '↓';
   };
@@ -71,15 +86,21 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
   if (scenarios.length === 0) {
     return (
       <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
-        <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">{t.comparison.title}</h2>
-        <p className="text-sm sm:text-base text-gray-600 text-center py-8">{t.comparison.noScenarios}</p>
+        <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">
+          {t.comparison.title}
+        </h2>
+        <p className="text-sm sm:text-base text-gray-600 text-center py-8">
+          {t.comparison.noScenarios}
+        </p>
       </div>
     );
   }
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
-      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">{t.comparison.title}</h2>
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-gray-800">
+        {t.comparison.title}
+      </h2>
       <div className="overflow-x-auto -mx-4 sm:mx-0">
         <div className="inline-block min-w-full align-middle">
           <div className="overflow-hidden">
@@ -92,7 +113,9 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                   >
                     <div className="flex items-center gap-1">
                       <span>{t.comparison.propertyPrice}</span>
-                      <span className="text-xs">{getSortIcon('propertyPrice')}</span>
+                      <span className="text-xs">
+                        {getSortIcon('propertyPrice')}
+                      </span>
                     </div>
                   </th>
                   <th className="px-3 sm:px-4 py-3 ltr:text-left rtl:text-right text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
@@ -104,7 +127,9 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                   >
                     <div className="flex items-center gap-1">
                       <span>{t.comparison.loanAmount}</span>
-                      <span className="text-xs">{getSortIcon('loanAmount')}</span>
+                      <span className="text-xs">
+                        {getSortIcon('loanAmount')}
+                      </span>
                     </div>
                   </th>
                   <th
@@ -113,7 +138,9 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                   >
                     <div className="flex items-center gap-1">
                       <span>{t.comparison.duration}</span>
-                      <span className="text-xs">{getSortIcon('durationYears')}</span>
+                      <span className="text-xs">
+                        {getSortIcon('durationYears')}
+                      </span>
                     </div>
                   </th>
                   <th
@@ -122,7 +149,9 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                   >
                     <div className="flex items-center gap-1">
                       <span>{t.comparison.rate}</span>
-                      <span className="text-xs">{getSortIcon('interestRate')}</span>
+                      <span className="text-xs">
+                        {getSortIcon('interestRate')}
+                      </span>
                     </div>
                   </th>
                   <th className="px-3 sm:px-4 py-3 ltr:text-left rtl:text-right text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
@@ -134,7 +163,9 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                   >
                     <div className="flex items-center gap-1">
                       <span>{t.comparison.monthly}</span>
-                      <span className="text-sm">{getSortIcon('monthlyPayment')}</span>
+                      <span className="text-sm">
+                        {getSortIcon('monthlyPayment')}
+                      </span>
                     </div>
                   </th>
                   <th
@@ -143,7 +174,9 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                   >
                     <div className="flex items-center gap-1">
                       <span>{t.comparison.totalInterest}</span>
-                      <span className="text-sm">{getSortIcon('totalInterest')}</span>
+                      <span className="text-sm">
+                        {getSortIcon('totalInterest')}
+                      </span>
                     </div>
                   </th>
                   <th
@@ -152,7 +185,9 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                   >
                     <div className="flex items-center gap-1">
                       <span>{t.comparison.grandTotal}</span>
-                      <span className="text-sm">{getSortIcon('grandTotal')}</span>
+                      <span className="text-sm">
+                        {getSortIcon('grandTotal')}
+                      </span>
                     </div>
                   </th>
                   <th className="px-3 sm:px-4 py-3 ltr:text-left rtl:text-right text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap">
@@ -161,7 +196,7 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {sortedScenarios.map((scenario) => (
+                {sortedScenarios.map(scenario => (
                   <tr key={scenario.id} className="hover:bg-gray-50">
                     <td className="px-3 sm:px-4 py-3 whitespace-nowrap text-xs sm:text-sm text-gray-900 ltr:text-left rtl:text-right">
                       {formatCurrency(scenario.propertyPrice)}
@@ -179,7 +214,9 @@ export default function ComparisonTable({ scenarios, onDelete }: ComparisonTable
                       {scenario.interestRate}%
                     </td>
                     <td className="px-3 sm:px-4 py-3 whitespace-nowrap text-xs sm:text-sm text-gray-900 ltr:text-left rtl:text-right">
-                      {scenario.interestType === 'REDUCING' ? t.interestTypes.REDUCING : t.interestTypes.FLAT}
+                      {scenario.interestType === 'REDUCING'
+                        ? t.interestTypes.REDUCING
+                        : t.interestTypes.FLAT}
                     </td>
                     <td className="px-3 sm:px-4 py-3 whitespace-nowrap text-xs sm:text-sm font-semibold text-blue-600 ltr:text-left rtl:text-right">
                       {formatCurrency(scenario.monthlyPayment)}

@@ -51,7 +51,9 @@ export interface LoanScenario {
 export const loanScenarios = {
   findMany: (options?: { orderBy?: { createdAt: 'desc' | 'asc' } }) => {
     const order = options?.orderBy?.createdAt === 'desc' ? 'DESC' : 'ASC';
-    const rows = db.prepare(`SELECT * FROM loan_scenarios ORDER BY created_at ${order}`).all();
+    const rows = db
+      .prepare(`SELECT * FROM loan_scenarios ORDER BY created_at ${order}`)
+      .all();
 
     return rows.map((row: any) => ({
       id: row.id,
@@ -97,7 +99,9 @@ export const loanScenarios = {
       data.grandTotal
     );
 
-    const row: any = db.prepare('SELECT * FROM loan_scenarios WHERE id = ?').get(id);
+    const row: any = db
+      .prepare('SELECT * FROM loan_scenarios WHERE id = ?')
+      .get(id);
     return {
       id: row.id,
       propertyPrice: row.property_price,
@@ -122,7 +126,9 @@ export const loanScenarios = {
   },
 
   count: () => {
-    const result: any = db.prepare('SELECT COUNT(*) as count FROM loan_scenarios').get();
+    const result: any = db
+      .prepare('SELECT COUNT(*) as count FROM loan_scenarios')
+      .get();
     return result.count;
   },
 };

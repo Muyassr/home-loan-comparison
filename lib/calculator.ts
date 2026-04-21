@@ -42,7 +42,8 @@ function calculateReducingBalance(
     monthlyPayment = loanAmount / n;
   } else {
     // Standard reducing balance formula
-    monthlyPayment = (loanAmount * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
+    monthlyPayment =
+      (loanAmount * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
   }
 
   const totalPayable = monthlyPayment * n;
@@ -80,12 +81,24 @@ function calculateFlatRate(
 export function calculateLoan(input: LoanInput): LoanResult {
   const loanAmount = input.propertyPrice - input.downPayment;
 
-  let result: { monthlyPayment: number; totalInterest: number; totalPayable: number };
+  let result: {
+    monthlyPayment: number;
+    totalInterest: number;
+    totalPayable: number;
+  };
 
   if (input.interestType === 'REDUCING') {
-    result = calculateReducingBalance(loanAmount, input.interestRate, input.durationYears);
+    result = calculateReducingBalance(
+      loanAmount,
+      input.interestRate,
+      input.durationYears
+    );
   } else {
-    result = calculateFlatRate(loanAmount, input.interestRate, input.durationYears);
+    result = calculateFlatRate(
+      loanAmount,
+      input.interestRate,
+      input.durationYears
+    );
   }
 
   const grandTotal = result.totalPayable + input.adminFee;
@@ -117,7 +130,8 @@ export function generateAmortizationSchedule(
   if (r === 0) {
     monthlyPayment = loanAmount / n;
   } else {
-    monthlyPayment = (loanAmount * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
+    monthlyPayment =
+      (loanAmount * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
   }
 
   for (let month = 1; month <= n; month++) {
